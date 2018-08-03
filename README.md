@@ -8,4 +8,8 @@ El objetivo es buscar una dirección en google maps, obtener las coordenadas y g
 
 Se obtienen del siguiente link: https://data.buenosaires.gob.ar/dataset/barrios
 
+## Datos del shapefile de barrios
+
+Las coordenadas de los  polígonos tienen otro tipo de numeración, por lo que dentro del loop se agrega un paso para la conversión a la misma escala y que permita ubicarlos en el mapa.
+
 
