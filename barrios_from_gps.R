@@ -6,6 +6,8 @@ library(rgeos)
 library(sp)
 library(rgdal)
 
+wa.map <- readOGR("barrios_badata.shp")
+
 # Loop para el listado de domicilios sin barrio
 
 for (i in 1:nrow(base)) {
