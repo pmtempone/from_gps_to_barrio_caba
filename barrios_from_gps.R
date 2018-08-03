@@ -8,14 +8,14 @@ library(rgdal)
 
 # Loop para el listado de domicilios sin barrio
 
-for (i in 1:nrow(empresas_caba_sin_barrio)) {
+for (i in 1:nrow(base)) {
   
   print(i) # para conocer el intento
-  test <- getGeoCode(paste(empresas_caba_sin_barrio$Dire_Fiscal[i],',CABA'))
+  temp <- getGeoCode(paste(base$domicilio[i],',CABA'))
   
-  if (complete.cases(test)==TRUE){
+  if (complete.cases(temp)==TRUE){
   
-  test <- data.frame(t(test))
+  temp <- data.frame(t(temp))
   
   dat <- data.frame(cbind(test$lon,test$lat))
   
@@ -28,8 +28,8 @@ for (i in 1:nrow(empresas_caba_sin_barrio)) {
   if (typeof(dat)!='character'){
     matcheo <- over(dat, wa.map)
     
-    empresas_caba_sin_barrio$BARRIOS[i] <- as.character(matcheo$BARRIO)
-    empresas_caba_sin_barrio$COMUNA[i] <- as.character(matcheo$COMUNA)
+    base$BARRIOS[i] <- as.character(matcheo$BARRIO)
+    base$COMUNA[i] <- as.character(matcheo$COMUNA)
   }
   #proj4string(dat) <- proj4string(wa.map)
   
