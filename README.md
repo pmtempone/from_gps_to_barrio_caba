@@ -13,3 +13,7 @@ Se obtienen del siguiente link: https://data.buenosaires.gob.ar/dataset/barrios
 Las coordenadas de los  polígonos tienen otro tipo de numeración, por lo que dentro del loop se agrega un paso para la conversión a la misma escala y que permita ubicarlos en el mapa.
 
 
+## Variables
+
++ Base: hace referencia a la base donde se tengan los domicilios.
++ wa.map: Mapa de los barrios en formato shp.
